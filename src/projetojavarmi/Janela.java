@@ -94,7 +94,7 @@ public class Janela extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         cria(jTextField1.getText());
-        
+        jTextField1.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -139,7 +139,6 @@ public class Janela extends javax.swing.JFrame {
             IRemota objetoRemoto;
             objetoRemoto = (IRemota) Naming.lookup(nome);
             Requisicao requisicao = new Requisicao();
-
             requisicao.mensagem = mensagem;
             
             if (!objetoRemoto.requisita(requisicao)) {

@@ -13,7 +13,6 @@ public class ClasseLocal {
     public String mensagem;
     
     Requisicao r;
-     int n=10;
     Buffer buffer = Buffer.getInstance();
     
     public Requisicao consome(){
@@ -21,7 +20,7 @@ public class ClasseLocal {
             buffer.autCons++;
             
             r = buffer.removeBuffer(buffer.out);
-           
+           buffer.out = Math.abs(buffer.out+1)%buffer.getTamanho_Buffer();
             
             buffer.termCons++;
             System.out.println("autCons "+buffer.autCons);
